@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+<div class="bg-gray-100 text-indigo-800 py-4 px-2 mb-6 rounded">
+    <p class="text-2xl font-serif font-bold">{{ page.title }}</p>
+    <p class="text-sm">{{ page.date | date: "%b %-d, %Y" }} by {{ page.author }}</p>
+</div>
+
+<article class="prose max-w-none">
+{{ content }}
+</article>

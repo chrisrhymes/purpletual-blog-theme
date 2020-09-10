@@ -1,0 +1,25 @@
+title: Purpletual Blog Theme
+description: A starter kit for using Tailwind with Jekyll
+author: Your Name
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - gulpfile.babel.js
+  - LICENSE.md
+  - node_modules
+  - package.json
+  - package-lock.json
+  - README.md
+  - src
+  - tailwind.config.js
+  - netlify.toml
+
+paginate: 5
+paginate_path: /page:num
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-seo-tag

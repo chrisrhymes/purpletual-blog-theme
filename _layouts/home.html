@@ -1,0 +1,58 @@
+---
+layout: default
+---
+
+<div class="py-4">
+    <div class="prose max-w-none pb-4">
+        {{ content }}
+    </div>
+    <hr>
+</div>
+
+
+{% for post in paginator.posts %}
+<div class="py-4">
+    <a href="{{ post.url | relative_url }}" class="text-black text-2xl font-bold font-serif hover:text-indigo-900">{{ post.title }}</a>
+    <p class="text-sm">Published: {{ post.date | date: "%b %-d, %Y" }} by {{ post.author }}</p>
+    <div class="my-4 py-4">
+        <p>{{ post.excerpt | strip_html | strip_newlines | truncate: 200 }}</p>
+        <div class="text-right">
+            <a href="{{ post.url | relative_url }}" class="bg-indigo-800 text-white p-2 rounded cursor-pointer hover:bg-indigo-900">Read more...</a>
+        </div>
+    </div>
+    <hr>
+</div>
+{% endfor %}
+
+<div class="flex justify-between">
+    {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | relative_url }}"
+           class="border border-2 border-indigo-800 text-indigo-800 rounded px-4 py-2 cursor-pointer hover:bg-indigo-900 hover:text-white"
+        >
+            Previous
+        </a>
+    {% else %}
+        <a href="#"
+           class="border border-2 border-indigo-100 text-indigo-100 rounded px-4 py-2"
+        >
+            Previous
+        </a>
+    {% endif %}
+
+    {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | relative_url }}"
+           class="border border-2 border-indigo-800 text-indigo-800 rounded px-4 py-2 cursor-pointer hover:bg-indigo-900 hover:text-white"
+        >
+            Next
+        </a>
+    {% else %}
+        <a href="#"
+           class="border border-2 border-indigo-100 text-indigo-100 rounded px-4 py-2"
+        >
+            Next
+        </a>
+    {% endif %}
+
+
+
+</div>
